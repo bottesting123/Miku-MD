@@ -122,35 +122,6 @@ return list[Math.floor(list.length * Math.random())]
 
 
 
-Miku.ev.on('group-participants.update', async (anu) => {
-        console.log(anu)
-       
-        try {
-            let metadata = await Miku.groupMetadata(anu.id)
-            let participants = anu.participants
-            for (let num of participants) {
-  
-                try {
-                    ppuser = await Miku.profilePictureUrl(num, 'image')
-                } catch {
-                    ppuser = 'https://wallpapercave.com/wp/wp10753770.jpg'
-                }
-
-                try {
-                    ppgroup = await Miku.profilePictureUrl(anu.id, 'image')
-                } catch {
-                    ppgroup = 'https://telegra.ph/file/4cc2712eee93c105f6739.jpg'
-                }
-
-                let targetname = await Miku.getName(num)
-                grpmembernum = metadata.participants.length
-
-            
-                if (anu.action == 'add') {
-                let WAuserName = num
-                mikutext = `
-`
-
     let buttonMessage = {
 	image:await getBuffer(ppuser),
     mentions: [num],
