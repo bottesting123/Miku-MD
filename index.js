@@ -122,6 +122,18 @@ return list[Math.floor(list.length * Math.random())]
 
 
 
+Miku.ev.on('group-participants.update', async (anu) => {
+        console.log(anu)
+       
+        try {
+            let metadata = await Miku.groupMetadata(anu.id)
+            let participants = anu.participants
+            for (let num of participants) {
+  
+               
+                mikutext = `
+`
+
     let buttonMessage = {
 	image:await getBuffer(ppuser),
     mentions: [num],
